@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropConnect - Match with Proprietary Trading Firms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f1f5f9;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .firm-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .stats-pill {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        
+        #testimonials {
+            background: url('https://placehold.co/1600x800') center/cover no-repeat;
+            position: relative;
+        }
+        
+        #testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-chart-line text-2xl mr-2"></i>
+                        <span class="font-bold text-xl">PropConnect</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="hover:text-blue-100">For Traders</a>
+                    <a href="#" class="hover:text-blue-100">For Firms</a>
+                    <a href="#" class="hover:text-blue-100">Resources</a>
+                    <a href="#" class="hover:text-blue-100">Pricing</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block px-4 py-2 rounded-lg bg-white text-blue-600 font-medium hover:bg-blue-50 transition">Login</button>
+                    <button class="px-4 py-2 rounded-lg bg-white text-blue-600 font-medium hover:bg-blue-50 transition">Sign Up</button>
+                    <button class="md:hidden">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16 hero-content">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Connect With The Right Proprietary Trading Firm</h1>
+                    <p class="text-xl mb-8">Our smart matching algorithm pairs traders with prop firms that fit their trading style, experience level, and goals.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="px-8 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition">Find Your Firm</button>
+                        <button class="px-8 py-3 border-2 border-white rounded-lg font-bold hover:bg-white hover:bg-opacity-10 transition">Learn More</button>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-green-400 rounded-full w-4 h-4 mr-2"></div>
+                            <span>250+ Prop Firms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-yellow-400 rounded-full w-4 h-4 mr-2"></div>
+                            <span>10,000+ Traders</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-400 rounded-full w-4 h-4 mr-2"></div>
+                            <span>90% Match Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400" alt="Successful trader analyzing market data on multiple monitors with colourful charts and graphs" class="rounded-lg card-shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">250+</div>
+                    <div class="text-gray-600">Proprietary Firms</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-green-600 mb-2">82%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">15K+</div>
+                    <div class="text-gray-600">Traders Matched</div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-3xl font-bold text-yellow-600 mb-2">48h</div>
+                    <div class="text-gray-600">Avg. Match Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How PropConnect Works</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Our simple 3-step process connects you with the perfect proprietary trading firm.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-user-edit text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Create Your Profile</h3>
+                    <p class="text-gray-600">Tell us about your trading experience, strategies, and goals. The more details you provide, the better our match will be.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Matching</h3>
+                    <p class="text-gray-600">Our algorithm analyzes hundreds of prop firms to find the ones that best match your trading profile and preferences.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <div class="feature-icon rounded-full flex items-center justify-center mb-6 text-purple-600">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Connect & Trade</h3>
+                    <p class="text-gray-600">Get introduced to your matched firms, review their offers, and start trading with the one that fits you best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Firms -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold">Featured Proprietary Firms</h2>
+                <a href="#" class="text-blue-600 font-medium hover:underline">View All Firms</a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Firm Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden firm-card card-shadow transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x300" alt="Modern trading floor with multiple workstations displaying financial data" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="stats-pill px-3 py-1 rounded-full text-white text-sm font-medium">Top Rated</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">AlphaTrade Capital</h3>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                    <span class="text-gray-600">New York, USA</span>
+                                </div>
+                            </div>
+                            <div class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">Up to $500K</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Specializes in equities and options trading with strong support for algo traders.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Equities</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Options</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Algorithmic</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-1">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-500">42 traders</span>
+                            </div>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">View Firm</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Firm Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden firm-card card-shadow transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x300" alt="Forex trading room with multiple currency pairs displayed on large screens" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="stats-pill px-3 py-1 rounded-full text-white text-sm font-medium">Fast Funding</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Global FX Partners</h3>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                    <span class="text-gray-600">London, UK</span>
+                                </div>
+                            </div>
+                            <div class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">Up to $1M</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Leading forex prop firm with low latency execution and competitive spreads.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Forex</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Indices</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Commodities</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-1">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-500">68 traders</span>
+                            </div>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">View Firm</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Firm Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden firm-card card-shadow transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x300" alt="Crypto trading setup with multiple monitors showing Bitcoin and Ethereum charts" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="stats-pill px-3 py-1 rounded-full text-white text-sm font-medium">New</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">BlockTrade Ventures</h3>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                    <span class="text-gray-600">Singapore</span>
+                                </div>
+                            </div>
+                            <div class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium">Up to $250K</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Crypto-focused prop firm offering direct exchange connections and API trading.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Crypto</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">DeFi</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">24/7 Markets</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-1">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                    <img class="w-6 h-6 rounded-full border-2 border-white" src="https://placehold.co/24x24" alt="Trader profile">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-500">35 traders</span>
+                            </div>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">View Firm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matching CTA -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Find Your Perfect Prop Firm Match?</h2>
+                    <p class="text-xl mb-6">Our algorithm matches you with proprietary trading firms based on your trading style, experience, and goals.</p>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Personalized matches</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>No cost to apply</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Transparent reviews</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-white rounded-xl p-8 card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Start Your Journey</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="experience">Trading Experience</label>
+                            <select id="experience" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select your experience level</option>
+                                <option value="beginner">Beginner (0-1 year)</option>
+                                <option value="intermediate">Intermediate (1-3 years)</option>
+                                <option value="advanced">Advanced (3+ years)</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition">Get Matched Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 text-white relative">
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Traders Say About Us</h2>
+                <p class="text-xl max-w-2xl mx-auto">Join thousands of traders who found their perfect prop firm match.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-xl card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50x50" alt="Portrait of John Chen, forex trader in Hong Kong" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">John Chen</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"PropConnect matched me with a forex firm that perfectly suits my scalping strategy. I went from demo accounts to trading a $100K account in just 2 months!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-xl card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50x50" alt="Portrait of Sarah Williams, algorithmic trader in Chicago" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Williams</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"As an algorithmic trader, I needed a firm with robust API support. PropConnect found me three excellent options, and I'm now happily trading with two of them."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-xl card-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/50x50" alt="Portrait of Michael Rodriguez, crypto trader in Miami" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Rodriguez</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"The crypto firm I was matched with offers amazing conditions and direct exchange connections. PropConnect saved me months of research!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to know about finding your prop firm match.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6">
+                    <button onclick="toggleFAQ('faq1')" class="flex justify-between items-center w-full px-6 py-4 bg-white rounded-lg card-shadow">
+                        <h3 class="text-lg font-medium text-gray-800">How does the matching process work?</h3>
+                        <i id="faq1-icon" class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq1" class="hidden px-6 pt-4 pb-2 bg-white rounded-b-lg">
+                        <p class="text-gray-600 mb-4">Our proprietary algorithm analyzes over 50 factors including your trading experience, preferred markets, trading style, risk tolerance, and goals. We compare these against our database of prop firms' requirements and offerings to find the best matches.</p>
+                        <p class="text-gray-600">You'll receive a detailed report of your top 3 matches with explanations of how they align with your profile.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6">
+                    <button onclick="toggleFAQ('faq2')" class="flex justify-between items-center w-full px-6 py-4 bg-white rounded-lg card-shadow">
+                        <h3 class="text-lg font-medium text-gray-800">Is there any cost to use PropConnect?</h3>
+                        <i id="faq2-icon" class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq2" class="hidden px-6 pt-4 pb-2 bg-white rounded-b-lg">
+                        <p class="text-gray-600">No, PropConnect is completely free for traders. We're compensated by the prop firms when successful matches are made.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6">
+                    <button onclick="toggleFAQ('faq3')" class="flex justify-between items-center w-full px-6 py-4 bg-white rounded-lg card-shadow">
+                        <h3 class="text-lg font-medium text-gray-800">What information do I need to provide?</h3>
+                        <i id="faq3-icon" class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq3" class="hidden px-6 pt-4 pb-2 bg-white rounded-b-lg">
+                        <p class="text-gray-600 mb-4">We'll ask for:</p>
+                        <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                            <li>Basic personal information</li>
+                            <li>Trading experience and performance metrics</li>
+                            <li>Preferred markets and instruments</li>
+                            <li>Trading strategy details</li>
+                            <li>Risk management approach</li>
+                            <li>Funding and account size preferences</li>
+                            <li>Geographic and operational requirements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6">
+                    <button onclick="toggleFAQ('faq4')" class="flex justify-between items-center w-full px-6 py-4 bg-white rounded-lg card-shadow">
+                        <h3 class="text-lg font-medium text-gray-800">How long does the matching process take?</h3>
+                        <i id="faq4-icon" class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq4" class="hidden px-6 pt-4 pb-2 bg-white rounded-b-lg">
+                        <p class="text-gray-600">After completing your profile (which typically takes 10-15 minutes), our system generates initial matches within 24 hours. You'll receive periodic updates as we refine matches based on additional data and firm responses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl p-10 text-center card-shadow">
+                <h2 class="text-3xl font-bold text-white mb-4">Start Trading With A Prop Firm Today</h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Join thousands of traders who found their perfect match through PropConnect</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="px-8 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition">Find Your Firm</button>
+                    <button class="px-8 py-3 border-2 border-white text-white rounded-lg font-bold hover:bg-white hover:bg-opacity-10 transition">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-2xl mr-2 text-blue-400"></i>
+                        <span class="font-bold text-xl text-white">PropConnect</span>
+                    </div>
+                    <p class="mb-4">Connecting traders with proprietary trading firms worldwide.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">For Traders</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Find a Prop Firm</a></li>
+                        <li><a href="#" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trader Resources</a></li>
+                        <li><a href="#" class="hover:text-white transition">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">For Firms</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">List Your Firm</a></li>
+                        <li><a href="#" class="hover:text-white transition">Our Screening Process</a></li>
+                        <li><a href="#" class="hover:text-white transition">Benefits</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-sm text-center">
+                <p>&copy; 2023 PropConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        function toggleFAQ(id) {
+            const faq = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            if (faq.classList.contains('hidden')) {
+                faq.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                faq.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
